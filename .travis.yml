@@ -39,21 +39,21 @@ addons:
     - libcurl4-openssl-dev
     # testing
     #- wine
-  coverity_scan:
-    project:
-      name: White-Tiger/T-Clock
-      description: Build submitted via Travis CI
-    notification_email:
-      secure: Guqbi+ipUVfFpkJZsyrzMqmVqFA6dJKnhGau/FB/RcvLWRZD6hdArZlECRe9gQHjTg82gPOqwMjOmLlDQjWEXUua93E3dxTAAkiHVyweocKF2W7bAqhVKD6FB1bwcpA7CV/n5InvqfvFnhp/4J3kyb9qRFGPjaWcUiw7z4fFuqk=
-    build_command_prepend: |
-      which ccache
-      which i686-w64-mingw32-gcc
-      cov-configure --compiler=i686-w64-mingw32-gcc --comptype=gcc --template
-      cov-configure --compiler=x86_64-w64-mingw32-gcc --comptype=gcc --template
-      ccache --clear
-      ./compile.bat clean
-    build_command: . compile.bat
-    branch_pattern: ".*"
+  # coverity_scan:
+  #   project:
+  #     name: White-Tiger/T-Clock
+  #     description: Build submitted via Travis CI
+  #   notification_email:
+  #     secure: Guqbi+ipUVfFpkJZsyrzMqmVqFA6dJKnhGau/FB/RcvLWRZD6hdArZlECRe9gQHjTg82gPOqwMjOmLlDQjWEXUua93E3dxTAAkiHVyweocKF2W7bAqhVKD6FB1bwcpA7CV/n5InvqfvFnhp/4J3kyb9qRFGPjaWcUiw7z4fFuqk=
+  #   build_command_prepend: |
+  #     which ccache
+  #     which i686-w64-mingw32-gcc
+  #     cov-configure --compiler=i686-w64-mingw32-gcc --comptype=gcc --template
+  #     cov-configure --compiler=x86_64-w64-mingw32-gcc --comptype=gcc --template
+  #     ccache --clear
+  #     ./compile.bat clean
+  #   build_command: . compile.bat
+  #   branch_pattern: ".*"
 
 deploy:
   provider: releases
