@@ -177,7 +177,7 @@ update_and_continue:
 	if(enable) {
 		unsigned data = 0;
 		time_t ts = time(NULL) - 1;
-		ts += 3600 - (ts % 3600);
+		ts += 1800 - (ts % 3600);
 		if(api.GetInt(L"", L"JihouRepeat", 0))
 			data |= ALRM_CHIMEHR;
 		if(api.GetInt(L"", L"JihouBlink", 0))
